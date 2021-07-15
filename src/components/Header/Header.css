@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+}
+
+.nav-ber {
+    position: relative;
+}
+
+.nav-ber a {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.nav-ber Button {
+    padding: 0px 30px;
+}

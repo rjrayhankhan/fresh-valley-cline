@@ -1,0 +1,30 @@
+.input {
+   margin-left: 100px;
+}
+
+.input-aria {
+    border: 1px solid red;
+    width: 900px;
+}
+
+
+.input-aria p {
+    margin: 50px 0px 0px 25px;
+}
+
+.input-aria input {
+    width: 400px;
+}
+
+.admin input {
+    float: right;
+}
+
+.admin {
+    display: flex;
+}
+
+.side-ber {
+    border: 1px solid tomato;
+    width: 200px;
+}
