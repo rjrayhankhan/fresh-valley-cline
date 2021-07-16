@@ -1,14 +1,14 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg">
-            <Container>
-                <Navbar.Brand href="#home">Fresh Valley</Navbar.Brand>
+            <Container className="navbar">
+                <Navbar.Brand className="logo" href="#home">Fresh Valley</Navbar.Brand>
                     <Nav  className="nav-ber">
                         <Link to="/home">Home</Link>
                         <Link to="/order">Order</Link>

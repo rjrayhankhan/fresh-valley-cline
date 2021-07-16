@@ -15,7 +15,8 @@ const Admin = () => {
             wight: data.wight,
             image: imageURL
         };
-        const url = `https://dry-savannah-52659.herokuapp.com/addProduct`;
+        // const url = `https://dry-savannah-52659.herokuapp.com/addProduct`;
+        const url = `http://localhost:5055/addProduct`;
 
         fetch(url, {
             method: 'POST',
@@ -36,6 +37,7 @@ const Admin = () => {
 
         axios.post('https://api.imgbb.com/1/upload', imageUpload)
             .then(function (response) {
+                console.log(response.data.data.display_url)
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
