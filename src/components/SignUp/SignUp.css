@@ -1,0 +1,18 @@
+.btn-aria {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-aria button {
+    width: 353px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.btn-aria img {
+    width: 30px;
+    margin-left: -85px;
+    margin-right: 51px;
+}

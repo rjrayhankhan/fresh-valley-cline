@@ -1,0 +1,60 @@
+.data-aria {
+    width: 850px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.side-ber {
+    width: 307px;
+    height: 880px;
+    background-color: #203D37;
+    color: #fff;
+    border-radius: 20px 0 20px 20px;
+}
+
+.data-header {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    width: 790px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.show-data {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    width: 790px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 2;
+}
+
+.detail {
+    height: 70px;
+    line-height: initial;
+}
+
+.detail-col {
+    margin-top: 15px;
+}
+
+.icon1, .icon2 {
+    color: white;
+    border: none;
+    margin-left: 5px;
+    padding: 5px 7px;
+}
+
+.icon1  {
+    background-color: rgb(30, 109, 255);
+}
+
+.icon2 {
+    background-color: red;
+}

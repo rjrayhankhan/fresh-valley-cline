@@ -2,7 +2,11 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import './Admin.css'
+import './Admin.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faPen, faPlus, faThLarge } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
+
 
 const Admin = () => {
     const { register, handleSubmit, watch } = useForm();
@@ -46,14 +50,21 @@ const Admin = () => {
     }
 
     return (
-        <div className="admin container">
+        <Container>
+        <div className="admin">
             <div className="side-ber">
-                <h1>this is side-ber</h1>
+                <div className="side-ber-text">
+                    <h3>Fresh Valley</h3>
+                    <Link to="manageProduct" className="manage-product"><p><FontAwesomeIcon icon={faThLarge} /> Manage product</p></Link>
+                    <Link to="admin" className="manage-product"><p><FontAwesomeIcon icon={faPlus} /> Add Product</p></Link>
+                    <Link to="" className="manage-product"><p><FontAwesomeIcon icon={faPen} /> Edit Product</p></Link>
+                    
+                    
+                </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="head"><h5 style={{ fontWeight: 'bold'}}>Add Product</h5></div>
                 <div className="input-aria">
-                    <h4>Add Product</h4>
-                    <Container>
                         <Row>
                             <Col>
                                 <div className="input-box">
@@ -78,11 +89,11 @@ const Admin = () => {
                                 </div>
                             </Col>
                         </Row>
-                    </Container>
                 </div>
-                <input type="submit" />
+                <input className="submit-button" type="submit" />
             </form>
         </div >
+      </Container>
     );
 };
 

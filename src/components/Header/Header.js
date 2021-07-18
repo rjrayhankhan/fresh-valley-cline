@@ -1,10 +1,17 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 const Header = () => {
+
+    const history = useHistory();
+    const handleClick = () => {
+         const url = '/login';
+         history.push(url);
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container className="navbar">
@@ -14,7 +21,7 @@ const Header = () => {
                         <Link to="/order">Order</Link>
                         <Link to="/admin">Admin</Link>
                         <Link to="/contact">Contact</Link>
-                        <Button>Login</Button>
+                        <Button onClick={handleClick}>Login</Button>
                     </Nav>
             </Container>
         </Navbar>

@@ -2,18 +2,31 @@
    margin-left: 100px;
 }
 
+.head {
+    padding: 15px;
+    margin-bottom: 40px;
+    background-color: #f0f0f0;
+    border-radius: 0 20px 0 0;
+}
+
 .input-aria {
-    border: 1px solid red;
-    width: 900px;
+    width: 850px;
+    height: 245px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 20px;
+    padding-right: 10px;
 }
 
 
 .input-aria p {
     margin: 50px 0px 0px 25px;
+    font-weight: 600;
 }
 
 .input-aria input {
-    width: 400px;
+    width: 385px;
+    padding: 5px;
 }
 
 .admin input {
@@ -22,9 +35,36 @@
 
 .admin {
     display: flex;
+    background-color: #F4FCFB;
+    margin-top: 25px;
+    border-radius: 0 20px 0 0;
 }
 
 .side-ber {
-    border: 1px solid tomato;
-    width: 200px;
+    width: 307px;
+    height: 550px;
+    background-color: #203D37;
+    color: #fff;
+}
+
+.submit-button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(30, 109, 255);
+    color: white;
+    margin-right: 22px;
+}
+
+.side-ber-text h3 {
+    margin: 15px 20px 40px 30px;
+}
+
+.side-ber-text p {
+    margin-left: 40px;
+}
+
+.manage-product {
+    color: #fff;
+    text-decoration: none;
 }

@@ -1,0 +1,62 @@
+.login-form {
+    margin: 30px 100px;
+    border: 1px solid gray;
+    background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.input-text {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    
+}
+
+.submit {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    width: 400px;
+    border: none;
+    background-color: rgb(30, 109, 255);
+    color: white;
+}
+
+.error {
+    color: red;
+}
+
+.remember {
+    margin-top: 10px;
+}
+
+.remember input {
+    margin-right: 5px;
+}
+
+.forget{
+    color: rgb(30, 109, 255);
+    text-decoration: underline;
+    margin-left: 155px;
+}
+
+.login-form p {
+    text-align: center;
+}
+
+.create-account {
+    color: rgb(30, 109, 255);
+    text-decoration: underline;
+}
+
+.btn-aria {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
