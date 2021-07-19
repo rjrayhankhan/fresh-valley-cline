@@ -14,6 +14,10 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
 import { useState } from "react";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Order from "./components/Order/Order";
+import CheckOut from "./components/CheckOut/CheckOut";
+
 
 
 export const UserContext = createContext();
@@ -21,7 +25,6 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  console.log(loggedInUser)
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
@@ -36,8 +39,14 @@ function App() {
          <Route path="/admin">
            <Admin></Admin>
          </Route>
+         <Route path="/order">
+           <Order></Order>
+         </Route>
          <Route path="/manageProduct">
            <ManageProduct></ManageProduct>
+         </Route>
+         <Route path="/checkOut/:id">
+           <CheckOut></CheckOut>
          </Route>
          <Route path="/login">
            <Login></Login>

@@ -1,0 +1,45 @@
+.check-aria {
+    width: 1080px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.check-out {
+    padding: 15px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+}
+
+.check-out-data {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    width: 1040px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 2;
+}
+
+.check-out-header {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    width: 1040px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.check-out-button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(30, 109, 255);
+    color: white;
+    margin-right: 22px;
+    float: right;
+}

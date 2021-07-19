@@ -20,7 +20,7 @@ const Header = () => {
                         <Link to="/home">Home</Link>
                         <Link to="/order">Order</Link>
                         <Link to="/admin">Admin</Link>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact">Deals</Link>
                         <Button onClick={handleClick}>Login</Button>
                     </Nav>
             </Container>

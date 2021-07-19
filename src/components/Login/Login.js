@@ -3,7 +3,7 @@ import './Login.css';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../firebase.config';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import google from '../../icons/Group 573.png'
 import { UserContext } from '../../App';
 
@@ -14,16 +14,22 @@ if (!firebase.apps.length) {
 
 
 const Login = () => {
-    const [ setLoggedInUser ] = useContext(UserContext)
-    const [user, setUser] = useState({});
+    const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+    // const [user, setUser] = useState({});
+
+    
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
    const handleClick = () => {
      const provider = new firebase.auth.GoogleAuthProvider();
      firebase.auth().signInWithPopup(provider)
         .then((result) => {
         var user = result.user;
-        setUser(user)
+        // setUser(user)
         setLoggedInUser(user)
+        history.replace(from);
     })
     .catch((error) => {
         var errorCode = error.code;

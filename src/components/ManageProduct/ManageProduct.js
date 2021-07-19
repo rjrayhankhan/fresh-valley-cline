@@ -47,17 +47,21 @@ const handleClick = (id) => {
                         </div>
                         <div className="show-data">
                             {
-                                dataManage.map(data => 
-                                 <Row key={data._id} className="detail">
-                                    <Col className="detail-col" sm>{data.name}</Col>
-                                    <Col className="detail-col" sm>{data.wight}</Col>
-                                    <Col className="detail-col" sm>{data.price}</Col>
-                                    <Col className="detail-col" sm>
-                                        <button className="icon1"><FontAwesomeIcon icon={faPen} /></button>
-                                        <button onClick={() => handleClick(data._id)} className="icon2"><FontAwesomeIcon icon={faTrashAlt} /></button>
-                                    </Col>
-                                </Row>)
+                                dataManage.length === 0 ? <p>Login....</p> : 
+                                
+                                    dataManage.map(data => 
+                                     <Row key={data._id} className="detail">
+                                        <Col className="detail-col" sm>{data.name}</Col>
+                                        <Col className="detail-col" sm>{data.wight}</Col>
+                                        <Col className="detail-col" sm>{data.price}</Col>
+                                        <Col className="detail-col" sm>
+                                            <button className="icon1"><FontAwesomeIcon icon={faPen} /></button>
+                                            <button onClick={() => handleClick(data._id)} className="icon2"><FontAwesomeIcon icon={faTrashAlt} /></button>
+                                        </Col>
+                                    </Row>
+                                  )
                             }
+                           
                         </div>
                     </div>
                 </div>
