@@ -28,7 +28,7 @@ const CheckOut = () => {
             product: data
         };
 
-        // const url = `https://dry-savannah-52659.herokuapp.com/addProduct`;
+        // const url = `https://dry-savannah-52659.herokuapp.com/userOrder`;
         const url = `http://localhost:5055/userOrder`;
 
         fetch(url, {
