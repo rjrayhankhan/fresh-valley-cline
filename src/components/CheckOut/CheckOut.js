@@ -12,6 +12,7 @@ const CheckOut = () => {
     const { id } = useParams();
 
     const url = `https://dry-savannah-52659.herokuapp.com/products`;
+
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -24,12 +25,13 @@ const CheckOut = () => {
 
     const handleClick = () => {
         const userOrder = {
+            date: new Date().toDateString('dd/MM/yyyy'),
             email: loggedInUser.email,
             product: data
         };
+        console.log(userOrder)
 
-        // const url = `https://dry-savannah-52659.herokuapp.com/userOrder`;
-        const url = `http://localhost:5055/userOrder`;
+        const url = `https://dry-savannah-52659.herokuapp.com/userOrder`;
 
         fetch(url, {
             method: 'POST',

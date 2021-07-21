@@ -1,10 +1,23 @@
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import './Order.css'
+import './Order.css';
+import { UserContext } from '../../App';
+import { useEffect } from 'react';
+import OrderData from './OrderData';
+
 
 const Order = () => {
+    const [order, setOrder] = useState([]);
+    const [ loggedInUser ] = useContext(UserContext);
+
+
+    useEffect(() => {
+        fetch(`https://dry-savannah-52659.herokuapp.com/userOrders?email=` + loggedInUser.email)
+        .then(res => res.json())
+        .then(data => setOrder(data));
+    }, []);
+
+
     return (
         <div className="container">
             <div className="check-out">
@@ -14,18 +27,15 @@ const Order = () => {
                 <div className="check-out-header">
                     <Row>
                         <Col sm>Name</Col>
-                        <Col sm>Quantity</Col>
+                        <Col sm>Order Date</Col>
                         <Col sm>wight</Col>
                         <Col sm>Price</Col>
                     </Row>
                 </div>
                 <div className="check-out-data">
-                    <Row className="detail">
-                        <Col className="detail-col" sm>data.name</Col>
-                        <Col className="detail-col" sm>data.Quantity</Col>
-                        <Col className="detail-col" sm>data.wight</Col>
-                        <Col className="detail-col" sm>data.price</Col>
-                    </Row>
+                    {
+                        order.map(orders => <OrderData key={orders.product._id} data={orders}></OrderData>)
+                    }
                 </div>
             </div>
         </div>

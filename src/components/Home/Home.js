@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Home.css';
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row, Button, Spinner } from "react-bootstrap";
 import Cart from '../Cart/Cart'
 
 const Home = () => {
@@ -22,11 +22,14 @@ const Home = () => {
                 <Button className="button">Search</Button>
             </div>
             <Container>
-                <Row>
-                    {
-                        products.map(pd => <Cart products={pd} key={pd._id}></Cart>)
-                    }
-                </Row>
+                {
+                    products.length === 0 ? <Spinner style={{ marginLeft: '500px'}} animation="border" variant="primary" /> :
+                    <Row>
+                         {
+                             products.map(pd => <Cart products={pd} key={pd._id}></Cart>)
+                         }
+                   </Row>
+                }
             </Container>
         </div>
     );

@@ -17,8 +17,9 @@ const ManageProduct = () => {
        .then(data => setDataManage(data))
     }, []);
 
+    
 const handleClick = (id) => {
-    console.log('clicked', id);
+    
 }
 
     return (

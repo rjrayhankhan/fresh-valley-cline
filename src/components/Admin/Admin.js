@@ -4,12 +4,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import './Admin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faPen, faPlus, faThLarge } from '@fortawesome/free-solid-svg-icons'
+import { faPen, faPlus, faThLarge } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 
 
 const Admin = () => {
-    const { register, handleSubmit, watch } = useForm();
+    const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
@@ -19,8 +19,7 @@ const Admin = () => {
             wight: data.wight,
             image: imageURL
         };
-        // const url = `https://dry-savannah-52659.herokuapp.com/addProduct`;
-        const url = `http://localhost:5055/addProduct`;
+        const url = `https://dry-savannah-52659.herokuapp.com/addProduct`;
 
         fetch(url, {
             method: 'POST',
@@ -33,7 +32,6 @@ const Admin = () => {
     };
 
     const handleUploadImage = event => {
-        console.log(event.target.files[0])
         const imageUpload = new FormData();
         imageUpload.set('key', '688c7ba26427700b29a03d8886d9a5d4')
         imageUpload.append('image', event.target.files[0])
@@ -41,7 +39,6 @@ const Admin = () => {
 
         axios.post('https://api.imgbb.com/1/upload', imageUpload)
             .then(function (response) {
-                console.log(response.data.data.display_url)
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
@@ -54,7 +51,7 @@ const Admin = () => {
         <div className="admin">
             <div className="side-ber">
                 <div className="side-ber-text">
-                    <h3>Fresh Valley</h3>
+                    <h3>Fresh Product</h3>
                     <Link to="manageProduct" className="manage-product"><p><FontAwesomeIcon icon={faThLarge} /> Manage product</p></Link>
                     <Link to="admin" className="manage-product"><p><FontAwesomeIcon icon={faPlus} /> Add Product</p></Link>
                     <Link to="" className="manage-product"><p><FontAwesomeIcon icon={faPen} /> Edit Product</p></Link>
@@ -85,7 +82,7 @@ const Admin = () => {
 
                                 <div className="input-box">
                                     <p>Add Photo</p>
-                                    <input type="file" onChange={handleUploadImage} />
+                                    <input type="file"  {...register("upload", { required: true })} onChange={handleUploadImage} />
                                 </div>
                             </Col>
                         </Row>

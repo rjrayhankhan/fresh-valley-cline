@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -27,8 +27,7 @@ const Login = () => {
      firebase.auth().signInWithPopup(provider)
         .then((result) => {
         var user = result.user;
-        // setUser(user)
-        setLoggedInUser(user)
+        setLoggedInUser(user);
         history.replace(from);
     })
     .catch((error) => {
@@ -48,13 +47,14 @@ const Login = () => {
 
     }
 
+
     return (
         <div>
             <form className="login-form" onSubmit={handleSubmit}>
                 <h3>Login</h3>
                 <input className="input-text" onBlur={handleBlur} name="email" required  placeholder="Email" />
                 <input className="input-text" onBlur={handleBlur} type="password" name="password" required placeholder="Password" />
-                {/* <p style={{color: "red"}}>{user.error}</p> */}
+                
                 
                 <div className="remember">
                     <input type="checkbox" name="remember" id="" />
